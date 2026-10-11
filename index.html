@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EditingbyIshwit | Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F2F3F5;
+            color: #2D2D2D;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* Simple Tab Navigation Links */
+        .nav-tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        .tab-btn:hover {
+            color: #000;
+        }
+
+        .tab-btn.active {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+
+        /* Container Card styling */
+        .portfolio-card {
+            background: #FFFFFF;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* Hiding & Showing Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Generic formatting rules for cleaner text layout */
+        h1, h3 {
+            margin-top: 0;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .contact-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+        }
+        .portfolio-link-btn {
+            display: inline-block;
+            background: #2D2D2D;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Simple Tabs Navigation Menu Links -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab(event, 'home')">Home</button>
+        <button class="tab-btn" onclick="switchTab(event, 'portfolio')">My Portfolio</button>
+        <button class="tab-btn" onclick="switchTab(event, 'contact')">Contact Me</button>
+    </div>
+
+    <!-- Main Card Body Workspace Area Frame -->
+    <div class="portfolio-card">
+        
+        <!-- Constant Layout Info -->
+        <h1>I am Ishwit</h1>
+        <p><strong>EditingbyIshwit</strong></p>
+        <hr>
+
+        <!-- PANEL SECTION 1: HOME PANEL DETAILED INTRO TEXT -->
+        <div id="home" class="tab-content active">
+            <h3>Welcome to my channel</h3>
+            <p>I can edit Videos for you:</p>
+            <ul>
+                <li>Long form videos</li>
+                <li>Short form / Reels / TikToks</li>
+                <li>Anime edits</li>
+            </ul>
+            <p>I am just new!</p>
+            <hr>
+            <p>I am a beginner, but my editing skills are good. I have edited shorts before, and mainly I edited anime edits. I focus completely on good quality and seamless transitions. Let's start adding more stuff to your projects!</p>
+        </div>
+
+        <!-- PANEL SECTION 2: PORTFOLIO MAIN LINK PANEL DISPLAY -->
+        <div id="portfolio" class="tab-content">
+            <h3>My Portfolio Showcase</h3>
+            <p>You can click on this link to checkout my portfolio and my edited videos:</p>
+            <a href="MyPortfolio.html" class="portfolio-link-btn">Checkout My Portfolio &rarr;</a>
+        </div>
+
+        <!-- PANEL SECTION 3: CONTACT INFORMATION DETAILS TAB CONTAINER -->
+        <div id="contact" class="tab-content">
+            <h3>Contact Details</h3>
+            
+            <div class="contact-box">
+                <p><strong>Email Address:</strong> gishwit@gmail.com</p>
+                <p>You can also email me. Note: It is better to email.</p>
+            </div>
+
+            <div class="contact-box">
+                <p><strong>Discord ID Username:</strong> iamcutttriple</p>
+                <p>You can freely dm me. I will send you my sample clips there!</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Clean, unbroken core tab logic setup engine -->
+    <script>
+        function switchTab(event, tabId) {
+            // Find all toggle tab buttons and strip out active flags
+            var buttons = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            // Find all viewable text pages and turn off visibility flags
+            var contents = document.getElementsByClassName("tab-content");
+            for (var j = 0; j < contents.length; j++) {
+                contents[j].classList.remove("active");
+            }
+
+            // Bind selection styles to active event targets mapped by button click
+            event.currentTarget.classList.add("active");
+            document.getElementById(tabId).classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
